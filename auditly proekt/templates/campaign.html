@@ -1,0 +1,11 @@
+<!-- campaign.html: setup for creating a message campaign -->
+<h2>Start your Campaign</h2>
+<form action="/start-campaign" method="post">
+    <label for="emailSubject">Email Subject:</label>
+    <input type="text" id="emailSubject" name="emailSubject" required><br>
+    <label for="emailMessage">Email Content:</label>
+    <textarea id="emailMessage" name="emailMessage" required></textarea><br>
+    <label for="linkedinMessage">LinkedIn Content:</label>
+    <textarea id="linkedinMessage" name="linkedinMessage" required></textarea><br>
+    <input type="submit" value="Start Campaign">
+</form>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>Reviews</h2>
+    <h5>Filters</h5>
+    <!-- Filtering Form -->
+    <form action="/reviews" method="GET">
+        <!-- Filter by Score -->
+        <label for="review_score">Review Score:</label>
+        <select name="score_filter_option">
+            <option value="equal">Equal to</option>
+            <option value="greater">Greater than</option>
+            <option value="lesser">Less than</option>
+        </select>
+        <input type="number" id="review_score" name="review_score" step="1">
+        
+        <label for="review_sentiment">Review Sentiment:</label>
+        <select id="review_sentiment" name="review_sentiment">
+            <option value="">All</option>
+            <option value="positive">Positive</option>
+            <option value="negative">Negative</option>
+            <option value="neutral">Neutral</option>
+        </select>
+        
+        <!-- Filter by Date -->
+        <label for="date_of_review">Date of Review:</label>
+        <select name="date_filter_option">
+            <option value="equal">Equal to</option>
+            <option value="greater">After</option>
+            <option value="lesser">Before</option>
+        </select>
+        <input type="date" id="date_of_review" name="date_of_review">
+        
+        <label for="product_domain_name">Product Domain Name:</label>
+        <input type="text" id="product_domain_name" name="product_domain_name">
+        
+        <button type="submit">Filter</button>
+    </form>
+    
+    <ul>
+        {% for review_text, reviewer_score, review_sentiment, date_of_review, review_domain_name, first_name, last_name, reviewer_id in reviews %}
+            <li>
+                <strong>Review by:</strong> <a href="{{ url_for('reviewer_info', reviewer_id=reviewer_id) }}">{{ first_name }} {{ last_name }}</a><br>
+                <strong>Product:</strong> {{ review_domain_name }}<br>
+                <strong>Review:</strong> {{ review_text }}<br>
+                <strong>Review score:</strong> {{ reviewer_score }}<br>
+                <strong>Review sentiment:</strong> {{ review_sentiment }}<br>
+                <strong>Date od review posted:</strong> {{ date_of_review }}<br>
+            </li>
+        {% else %}
+            <li>No reviews found.</li>
+        {% endfor %}
+    </ul>
+    </ul>
+    <form action="/campaign" method="GET">
+    <input type="submit" value="Start a message campaign using the people above">
+</form>
+</body>
+</html>

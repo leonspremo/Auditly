@@ -1,0 +1,68 @@
+/* Typography */
+body, input, select, textarea, button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+h2, h5 {
+    color: #005A9C;
+    margin-top: 0;
+}
+
+/* Aligning labels for better form structure */
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+a {
+    color: #0066CC;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Unified look for all input fields and text areas */
+input[type=text],
+input[type=email],
+input[type=date],
+input[type=number],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #CDCDCD;
+    border-radius: 4px;
+}
+
+/* Buttons */
+button, input[type=submit] {
+    background-color: #005A9C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: #003D73;
+}
+
+/* Filter Review and Starting Campaign area */
+form {
+    margin-bottom: 20px;
+    border: 1px solid #CDCDCD;
+    border-radius: 4px;
+    padding: 20px;
+    background-color: #F9F9F9;
+}
+
+/* Navigational Focus */
+input:focus, textarea:focus, select:focus {
+    outline-color: #005A9C;
+}

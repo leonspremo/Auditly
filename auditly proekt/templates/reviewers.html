@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reviewers | Auditly</title>
+</head>
+<body>
+    <h2>Reviewers</h2>
+    <ul>
+        {% for reviewer in reviewers %}
+            <li>{{ reviewer[1] }} {{ reviewer[2] }} - {{ reviewer[4] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
